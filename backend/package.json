@@ -1,0 +1,23 @@
+{
+  "name": "bridgetalk-backend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "BridgeTalk backend: Firebase-authenticated send + Cloud TTS + Gemini suggestions + Firestore transcript (consent-gated).",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "check": "node --check src/server.js && node --check src/routes.js && node --check src/config.js && node --check src/adapters/auth.js && node --check src/adapters/tts.js && node --check src/adapters/gemini.js && node --check src/adapters/transcriptStore.js",
+    "test": "node --test test/"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "optionalDependencies": {
+    "firebase-admin": "^12.7.0",
+    "@google-cloud/texttospeech": "^5.6.0",
+    "@google-cloud/firestore": "^7.10.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
